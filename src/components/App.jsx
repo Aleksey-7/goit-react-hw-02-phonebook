@@ -10,7 +10,7 @@ export const App = () => {
         color: '#010101',
       }}
     >
-      Hello React! Phonebook version 1.0!
+      Hello React! My Phonebook!
     </div>
   );
 };
