@@ -1,7 +1,16 @@
 import styled from 'styled-components';
+import {
+  Form as FormikForm,
+  Field as FormikField,
+  ErrorMessage as FormikError,
+} from 'formik';
 
-export const Form = styled.form`
+export const Form = styled(FormikForm)`
   margin-bottom: 50px;
+`;
+
+export const ErrorMessage = styled(FormikError)`
+  color: red;
 `;
 
 export const Label = styled.label`
@@ -16,7 +25,7 @@ export const Title = styled.p`
   margin-bottom: 5px;
 `;
 
-export const Input = styled.input`
+export const Field = styled(FormikField)`
   height: 40px;
   padding: 0 10px 0 10px;
 

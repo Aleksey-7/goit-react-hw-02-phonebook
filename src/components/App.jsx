@@ -18,15 +18,17 @@ export class App extends Component {
     const { contacts } = this.state;
     const newContact = { id: nanoid(), name, number };
 
-    contacts.some(contact => contact.name === name)
+    contacts.some(contact => contact.name === name || contact.number === number)
       ? Report.warning(
           `${name}`,
-          'This user is already in the contact list.',
+          'This user or number is already in the contact list.',
           'OK'
         )
-      : this.setState(({ contacts }) => ({
-          contacts: [newContact, ...contacts],
-        }));
+      : this.setState(prevState => {
+          return {
+            contacts: [...prevState.contacts, newContact],
+          };
+        });
   };
 
   deleteContact = contactId => {
