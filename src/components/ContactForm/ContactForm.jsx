@@ -14,9 +14,9 @@ const FormSchema = Yup.object().shape({
     .min(2, 'Too Short!')
     .max(50, 'Too Long!')
     .required('Required'),
-  number: Yup.string()
+  number: Yup.number()
+    .positive('!!! > 0 !!!')
     .min(2, 'Too Short!')
-    .max(50, 'Too Long!')
     .required('Required'),
 });
 
